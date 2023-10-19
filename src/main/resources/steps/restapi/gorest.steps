@@ -1,0 +1,12 @@
+Composite: Then I create test user with details from jsonfile `$filename`
+!-- Just a debug step to test parameter passing
+!-- xThen `<filename>` is equal to `/data/responses/TestUserForGet.json`
+Given I initialize scenario variable `postbody` with value `#{loadResource(<filename>)}`
+When I set request headers:
+|name        |value           |
+|Authorization|Bearer ${bearer-token}|
+|Content-Type|application/json|
+Given request body: ${postbody}
+When I execute HTTP POST request for resource with relative URL `${user-endpoint}`
+Then response code is equal to `201`
+When I save JSON element value from `${response}` by JSON path `$.id` to story variable `TestUserID`

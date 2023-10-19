@@ -1,0 +1,7 @@
+{
+    "id": "${TestUserID}",
+    "name": "Test user",
+    "gender": "female",
+    "email": "${TestUserEmailAddress}",
+    "status": "active"
+}

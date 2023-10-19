@@ -25,3 +25,36 @@ By default the project is not configured to run any test suite: an attempt to ex
 
 ## Still have questions?
 :postbox: [Contact Us](https://docs.vividus.dev/vividus/latest/index.html#_contract_us)
+
+## Personal notes
+###Validate JSON field types (instead of exact value)
+
+```
+Then JSON element from `${response}` by JSON path `$` is equal to `
+{
+    "id": "${json-unit.any-number}",
+    "name": "Test user",
+    "email": "${randomemail}",
+    "gender": "female",
+    "status": "active"
+}
+`IGNORING_EXTRA_FIELDS
+```
+
+Available types: 
+
+```
+"${json-unit.any-string}"
+"${json-unit.any-boolean}"
+"${json-unit.any-number}"
+```
+### Lifecycles simulationg beforeall, beforetest etc
+[https://jbehave.org/reference/stable/lifecycle.html](https://jbehave.org/reference/stable/lifecycle.html)
+
+### When build fails with 401 Unauthorized
+[https://github.com/vividus-framework/vividus-build-system#update-from-the-vividus-build-system-remote](https://github.com/vividus-framework/vividus-build-system#update-from-the-vividus-build-system-remote)
+
+```
+git submodule update --remote vividus-build-system
+```
+

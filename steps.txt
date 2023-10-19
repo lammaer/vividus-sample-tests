@@ -1,0 +1,196 @@
+vividus                                          Given I initialize $scopes variable `$variableName` using template `$templatePath` with parameters:$templateParameters
+vividus                                          Given I initialize $scopes variable `$variableName` with value `$variableValue`
+vividus                                          Then I verify assertions matching '$assertionPattern'
+vividus                                          Then `$archiveData` archive contains entries with names:$parameters
+vividus                                          Then `$value` matches `$regex`
+vividus                                          Then `$variable1` is $comparisonRule `$variable2`
+vividus                                          Then `$variable` is equal to table ignoring extra columns:$table
+vividus                                          Then `$variable` is equal to table:$table
+vividus                                          When I '$number' times do:$stepsToExecute
+vividus                                          When I `$number` times do:$stepsToExecute
+vividus                                          When I create file with content `$fileContent` at path `$filePath`
+vividus                                          When I create temporary file with name `$name` and content `$content` and put path to $scopes variable `$variableName`
+vividus                                          When I execute steps at most $max times while variable '$variableName' is $comparisonRule '$expectedValue':$stepsToExecute
+vividus                                          When I execute steps at most $max times while variable `$variableName` is $comparisonRule `$expectedValue`:$stepsToExecute
+vividus                                          When I execute steps while counter is $comparisonRule '$limit' with increment '$increment' starting from '$seed':$stepsToExecute
+vividus                                          When I execute steps while counter is $comparisonRule `$limit` with increment `$increment` starting from `$seed`:$stepsToExecute
+vividus                                          When I execute steps with delay '$delay' at most $max times while variable '$variableName' is $comparisonRule '$expectedValue':$stepsToExecute
+vividus                                          When I execute steps with delay `$delay` at most $max times while variable `$variableName` is $comparisonRule `$expectedValue`:$stepsToExecute
+vividus                                          When I execute steps:$stepsToExecute
+vividus                                          When I initialize $scopes variable `$variableName` with values:$examplesTable
+vividus                                          When I save content of `$archiveData` archive entries to variables:$parameters
+vividus                                          When I wait `$period` for debug
+vividus                                          When the condition '$condition' is true I do$stepsToExecute
+vividus                                          When the condition `$condition` is true I do$stepsToExecute
+vividus                                          When variable '$name' is not set I do:$stepsToExecute
+vividus                                          When variable `$name` is not set I do:$stepsToExecute
+vividus-plugin-json                              Then JSON `$json` is valid against schema `$schema`
+vividus-plugin-json                              Then JSON element from `$json` by JSON path `$jsonPath` is equal to `$expectedJson`$options
+vividus-plugin-json                              Then JSON element value from `$json` by JSON path `$jsonPath` $comparisonRule `$expectedValue`
+vividus-plugin-json                              Then number of JSON elements from `$json` by JSON path `$jsonPath` is $comparisonRule $elementsNumber
+vividus-plugin-json                              When I convert JSON `$json` to $scopes variable `$variableName`
+vividus-plugin-json                              When I find $comparisonRule '$elementsNumber' JSON elements from '$json' by '$jsonPath' and for each element do$stepsToExecute
+vividus-plugin-json                              When I find $comparisonRule '$elementsNumber' JSON elements in '$json' by '$jsonPath' and until variable '$variableName' $variableMatcher '$expectedValue' for each element I do:$stepsToExecute
+vividus-plugin-json                              When I find $comparisonRule `$elementsNumber` JSON elements from `$json` by `$jsonPath` and for each element do$stepsToExecute
+vividus-plugin-json                              When I find $comparisonRule `$elementsNumber` JSON elements in `$json` by `$jsonPath` and until variable `$variableName` $variableMatcher `$expectedValue` for each element I do:$stepsToExecute
+vividus-plugin-json                              When I patch JSON `$sourceJson` using `$jsonPatch` and save result to $scopes variable `$variableName`
+vividus-plugin-json                              When I save JSON element from `$json` by JSON path `$jsonPath` to $scopes variable `$variableName`
+vividus-plugin-json                              When I save JSON element value from `$json` by JSON path `$jsonPath` to $scopes variable `$variableName`
+vividus-plugin-json                              When I save number of elements from `$json` found by JSON path `$jsonPath` to $scopes variable `$variableName`
+vividus-plugin-rest-api                          Given form data request:$parameters
+vividus-plugin-rest-api                          Given multipart request:$requestParts
+vividus-plugin-rest-api                          Given request body: $content
+vividus-plugin-rest-api                          Then HTTP resources are valid:$resources
+vividus-plugin-rest-api                          Then connection is secured using $securityProtocol protocol
+vividus-plugin-rest-api                          Then content type of response body $comparisonRule `$contentType`
+vividus-plugin-rest-api                          Then number of response headers with name `$headerName` is $comparisonRule $number
+vividus-plugin-rest-api                          Then response body $validationRule resource at `$resourcePath`
+vividus-plugin-rest-api                          Then response code is $comparisonRule `$responseCode`
+vividus-plugin-rest-api                          Then response does not contain body
+vividus-plugin-rest-api  DEPRECATED              Then response header '$httpHeaderName' contains attribute:$attributes
+vividus-plugin-rest-api                          Then response header `$headerName` contains elements:$elements
+vividus-plugin-rest-api                          Then response time is $comparisonRule `$responseTime` milliseconds
+vividus-plugin-rest-api                          Then server `$hostname` supports secure protocols that $rule `$protocols`
+vividus-plugin-rest-api                          Then size of decompressed response body is $comparisonRule `$sizeInBytes`
+vividus-plugin-rest-api  DEPRECATED              Then the connection is secured using $securityProtocol protocol
+vividus-plugin-rest-api  DEPRECATED              Then the number of the response headers with the name '$headerName' is $comparisonRule $value
+vividus-plugin-rest-api  DEPRECATED              Then the response body $comparisonRule '$content'
+vividus-plugin-rest-api  DEPRECATED              Then the response body $validationRule resource at '$resourcePath'
+vividus-plugin-rest-api  DEPRECATED              Then the response code is $comparisonRule '$responseCode'
+vividus-plugin-rest-api  DEPRECATED              Then the response does not contain body
+vividus-plugin-rest-api  DEPRECATED              Then the response time should be less than '$responseTimeThresholdMs' milliseconds
+vividus-plugin-rest-api  DEPRECATED              Then the value of the response header "$httpHeaderName" $comparisonRule "$value"
+vividus-plugin-rest-api  DEPRECATED              Then the value of the response header '$httpHeaderName' $comparisonRule '$value'
+vividus-plugin-rest-api                          Then value of response header `$headerName` $comparisonRule `$value`
+vividus-plugin-rest-api                          When I add request headers:$headers
+vividus-plugin-rest-api                          When I change value of all HTTP cookies with name `$cookieName` to `$newCookieValue`
+vividus-plugin-rest-api                          When I execute HTTP $httpMethod request for resource with URL `$url`
+vividus-plugin-rest-api                          When I execute HTTP $httpMethod request for resource with relative URL `$relativeURL`
+vividus-plugin-rest-api                          When I generate JWT with header `$header` and payload `$payload` signed with key `$key` using HS256 algorithm and save result to $scopes variable `$variableName`
+vividus-plugin-rest-api  DEPRECATED              When I save response header '$httpHeaderName' value to $scopes variable '$variableName'
+vividus-plugin-rest-api                          When I save response header `$headerName` value to $scopes variable `$variableName`
+vividus-plugin-rest-api                          When I save value of HTTP cookie with name `$cookieName` to $scopes variable `$variableName`
+vividus-plugin-rest-api                          When I set HTTP request configuration:$configItems
+vividus-plugin-rest-api                          When I set request headers:$headers
+vividus-plugin-rest-api                          When I wait for presence of element by `$jsonPath` for `$duration` duration retrying $retryTimes times$stepsToExecute
+vividus-plugin-rest-api                          When I wait for presence of element by `$jsonPath` with `$pollingInterval` polling interval retrying $retryTimes times$stepsToExecute
+vividus-plugin-rest-api                          When I wait for response code `$responseCode` for `$duration` duration retrying $retryTimes times$stepsToExecute
+COMPOSITE IN STEPS FILE  DEPRECATED              Given I am on a page with the URL '$pageURL'
+COMPOSITE IN STEPS FILE  DEPRECATED              Given I am on the main application page
+COMPOSITE IN STEPS FILE  DEPRECATED              Given I initialize the $scopes variable `$variableName` using template `$templatePath` with parameters:$templateParameters
+COMPOSITE IN STEPS FILE  DEPRECATED              Then JSON element by JSON path `$jsonPath` is equal to `$expectedJson`$options
+COMPOSITE IN STEPS FILE  DEPRECATED              Then JSON element value from context by JSON path `$jsonPath` $comparisonRule `$expectedValue`
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] button with the name '$buttonName' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] element with the attribute '$attributeType'='$attributeValue' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] element with the name '$elementName' and text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] element with the name '$elementName' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] element with the tag '$elementTag' does not exist
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] element with the tag '$elementTag' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] field with the name '$fieldName' and placeholder text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] field with the name '$fieldName' and text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a [$state] field with the name '$fieldName' exists
+COMPOSITE IN STEPS FILE                          Then a button with image with the src '$imageSrc' exists
+COMPOSITE IN STEPS FILE                          Then a button with the name '$buttonName' does not exist
+COMPOSITE IN STEPS FILE                          Then a button with the name '$buttonName' exists
+COMPOSITE IN STEPS FILE                          Then a button with the tooltip '$tooltip' and image with the src '$imageSrc' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' and placeholder text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' and text '$text' does not exist
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' and text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' and text containing '$textpart' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' does not exist
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then a field with the name '$fieldName' placeholder text '$text' does not exist
+COMPOSITE IN STEPS FILE                          Then a link with the URL '$URL' exists
+COMPOSITE IN STEPS FILE                          Then a link with the URL containing '$URLpart' exists
+COMPOSITE IN STEPS FILE                          Then an element by the cssSelector '$cssSelector' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then an element by the xpath '$xpath' does not exist
+COMPOSITE IN STEPS FILE  DEPRECATED              Then an element by the xpath '$xpath' exists
+COMPOSITE IN STEPS FILE                          Then an element with the attribute '$attributeType' containing '$attributeValue' exists
+COMPOSITE IN STEPS FILE                          Then an element with the attribute '$attributeType'='$attributeValue' exists
+COMPOSITE IN STEPS FILE                          Then an element with the name '$elementName' and text '$text' exists
+COMPOSITE IN STEPS FILE                          Then an element with the name '$elementName' containing text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then an element with the name '$elementName' disappears in '$timeout' seconds
+COMPOSITE IN STEPS FILE                          Then an element with the name '$elementName' does not exist
+COMPOSITE IN STEPS FILE                          Then an element with the name '$elementName' exists
+COMPOSITE IN STEPS FILE                          Then an element with the tag '$elementTag' and attribute '$attributeType'='$attributeValue' exists
+COMPOSITE IN STEPS FILE                          Then an element with the tag '$elementTag' and text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then at least one element by the xpath '$xpath' exists
+COMPOSITE IN STEPS FILE                          Then at least one element with the attribute '$attributeType'='$attributeValue' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then each element by the xpath '$elementXpath' has '$number' child elements by the xpath '$childXpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              Then each element by the xpath '$xpath' has same '$dimension'
+COMPOSITE IN STEPS FILE  DEPRECATED              Then element located '$locator' disappears in '$timeout'
+COMPOSITE IN STEPS FILE  DEPRECATED              Then element located `$locator` exists for `$duration` duration
+COMPOSITE IN STEPS FILE  DEPRECATED              Then elements located `$locator` are sorted by text in $sortingOrder order
+COMPOSITE IN STEPS FILE  DEPRECATED              Then invisible element by xpath '$xpath' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then number of JSON elements by JSON path `$jsonPath` is $comparisonRule $elementsNumber
+COMPOSITE IN STEPS FILE  DEPRECATED              Then page is scrolled to element located `$locator`
+COMPOSITE IN STEPS FILE  DEPRECATED              Then the context element is $focusState
+COMPOSITE IN STEPS FILE  DEPRECATED              Then the number of elements found by the xpath '$xpath' is $comparisonRule '$quantity'
+COMPOSITE IN STEPS FILE  DEPRECATED              Then the page title $comparisonRule '$text'
+COMPOSITE IN STEPS FILE                          Then the page title contains the text '$text'
+COMPOSITE IN STEPS FILE                          Then the page title is '$pageTitle'
+COMPOSITE IN STEPS FILE  DEPRECATED              Then the text '$text' exists
+COMPOSITE IN STEPS FILE  DEPRECATED              Then there are no browser console $logEntries by regex '$regex'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I add '$text' to a field by the xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I add '$text' to a field with the name '$fieldName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I attempt to close current window with possibility to handle alert
+COMPOSITE IN STEPS FILE  DEPRECATED              When I change context to element located `$locator` in scope of current context
+COMPOSITE IN STEPS FILE  DEPRECATED              When I clear a field by the xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I clear a field by the xpath '$xpath' using keyboard
+COMPOSITE IN STEPS FILE  DEPRECATED              When I clear a field with the name '$fieldName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I clear a field with the name '$fieldName' using keyboard
+COMPOSITE IN STEPS FILE                          When I click on a button with the image src '$imageSrc'
+COMPOSITE IN STEPS FILE                          When I click on a button with the name '$buttonName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I click on all elements by xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I click on an element by the xpath '$xpath'
+COMPOSITE IN STEPS FILE                          When I click on an element with the attribute '$attributeType'='$attributeValue'
+COMPOSITE IN STEPS FILE                          When I click on an element with the text '$text'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I close the current window
+COMPOSITE IN STEPS FILE  DEPRECATED              When I convert JSON from context to $scopes variable `$variableName`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I enter '$text' in a field by the xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I enter '$text' in a field with the name '$fieldName'
+COMPOSITE IN STEPS FILE                          When I enter `$text` in field located `$locator` using keyboard
+COMPOSITE IN STEPS FILE  DEPRECATED              When I find $comparisonRule '$elementsNumber' JSON elements by '$jsonPath' and for each element doa$stepsToExecute
+COMPOSITE IN STEPS FILE  DEPRECATED              When I find $comparisonRule '$elementsNumber' JSON elements in context by '$jsonPath' and until variable '$variableName' $variableMatcher '$expectedValue' for each element I do:$stepsToExecute
+COMPOSITE IN STEPS FILE  DEPRECATED              When I find $comparisonRule `$elementsNumber` JSON elements by `$jsonPath` and for each element do$stepsToExecute
+COMPOSITE IN STEPS FILE  DEPRECATED              When I find $comparisonRule `$elementsNumber` JSON elements in context by `$jsonPath` and until variable `$variableName` $variableMatcher `$expectedValue` for each element I do:$stepsToExecute
+COMPOSITE IN STEPS FILE  DEPRECATED              When I get the number of open windows and set it to the $scopes variable '$variable'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I go to the relative URL '$relativeURL'
+COMPOSITE IN STEPS FILE                          When I hover a mouse over a button with the name '$buttonName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I hover a mouse over an element with the xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I initialize the $scopes variable `$variableName` with value `$variableValue`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I perform right click on an element by the xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I refresh the page
+COMPOSITE IN STEPS FILE  DEPRECATED              When I save JSON element from context by JSON path `$jsonPath` to $scopes variable `$variableName`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I save JSON element value from context by JSON path `$jsonPath` to $scopes variable `$variableName`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I save response body to the $scopes variable '$variableName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I save table to $scopes variable '$variableName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I scroll element located `$locator` into view
+COMPOSITE IN STEPS FILE  DEPRECATED              When I select '$text' from a drop down by the xpath '$xpath'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I send HTTP $httpMethod to the relative URL '$relativeURL'
+COMPOSITE IN STEPS FILE                          When I set '$attributeName' attribute value of the context element to the '$scopes' variable '$variableName'
+COMPOSITE IN STEPS FILE                          When I set '$attributeName' attribute value of the element by $locator to the $scopes variable '$variableName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I set focus to the context element
+COMPOSITE IN STEPS FILE  DEPRECATED              When I set number of elements found by JSON path `$jsonPath` to $scopes variable `$variableName`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I set the number of elements found by xpath '$xpath' to the '$scopes' variable '$variableName'
+COMPOSITE IN STEPS FILE                          When I set the text found in search context to the '$scopes' variable '$variableName'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I swipe $direction to element located `$locator` with duration $swipeDuration
+COMPOSITE IN STEPS FILE  DEPRECATED              When I take screenshot and save it to folder `$screenshotFilePath`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I tap on element located `$locator`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I tap on element located `$locator` with duration `$duration`
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait `$duration` until window with title that $comparisonRule `$title` appears and switch to it
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait `$duration` with `$pollingDuration` polling until element located `$locator` becomes $state
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the name '$elementName' appears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the name '$elementName' contains the text '$text'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the name '$elementName' disappears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the name '$elementName' is stale
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the text '$text' appears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the text '$text' disappears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the xpath '$xpath' appears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until an element with the xpath '$xpath' disappeares
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until element located `$locator` appears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until element located `$locator` contains text '$text'
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until element located `$locator` disappears
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until element located `$locator` is stale
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until state of element located `$locator` is $state
+COMPOSITE IN STEPS FILE  DEPRECATED              When I wait until the state of an element with the name '$elementName' becomes [$state]
