@@ -1,17 +1,6 @@
 project.description = 'Sample tests demoing VIVIDUS capabilities'
 group = 'org.vividus.demo'
 
-repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/vividus-framework/vividus/")
-        credentials {
-            username = "lammaer"
-            password = "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*"
-        }
-   }
-}
-
-
 ext.buildSystemPath = "${System.env.VIVIDUS_BUILD_SYSTEM_HOME?:buildSystemRootDir}/${buildSystemVersion}"
 
 apply from: "${buildSystemPath}/vividus-test-project.gradle"

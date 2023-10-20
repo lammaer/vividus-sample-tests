@@ -94,7 +94,7 @@ Scenario: GET008 - Existing user but bad bearer token
 When I set request headers:
 |name        |value           |
 |Authorization|Bearer BadToken229c4db4be54a03441b1638c7ce612b119895e38ff0b20dedd5653ec0|
-When I execute HTTP GET request for resource with relative URL `${user-endpoint}/5292601`
+When I execute HTTP GET request for resource with relative URL `${user-endpoint}/${TestUserID}`
 Then response code is equal to `401`
 Then JSON element from `${response}` by JSON path `$.message` is equal to `Invalid token`
 
@@ -105,3 +105,17 @@ Then response code is equal to `200`
 When I find > `0` JSON elements from `${response}` by `$.*` and for each element do
 |step                                                                                                         |
 |Then JSON element from `${json-context}` by JSON path `$.status` is equal to `active` |
+
+Scenario: GET010 - Get by gender=male and status=active , all returned users are male active
+When I execute HTTP GET request for resource with relative URL `${user-endpoint}?gender=male&status=active`
+Then response code is equal to `200`
+When I find > `0` JSON elements from `${response}` by `$.*` and for each element do
+|step                                                                                                         |
+|Then JSON element from `${json-context}` by JSON path `$.status` is equal to `active` |
+|Then JSON element from `${json-context}` by JSON path `$.gender` is equal to `male` |
+
+Scenario: GET010 - Number of returned users is maximum 15
+When I execute HTTP GET request for resource with relative URL `${user-endpoint}?page=1&per_page=15`
+Then response code is equal to `200`
+Then number of JSON elements from `${json-context}` by JSON path `$` is less than or equal to 15
+
