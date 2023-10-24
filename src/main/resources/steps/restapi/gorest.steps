@@ -10,3 +10,32 @@ Given request body: ${postbody}
 When I execute HTTP POST request for resource with relative URL `${user-endpoint}`
 Then response code is equal to `201`
 When I save JSON element value from `${response}` by JSON path `$.id` to story variable `TestUserID`
+
+
+Composite: Then I delete test user with id `$userid`
+When I set request headers:
+|name        |value           |
+|Authorization|Bearer ${bearer-token}|
+|Content-Type|application/json|
+When I execute HTTP DELETE request for resource with relative URL `${user-endpoint}/<userid>`
+Then response code is equal to `204`
+
+
+Composite: Given I delete the user with email address `$emailaddress` if exist
+When I set the bearer token
+When I execute HTTP GET request for resource with relative URL `${user-endpoint}/?email=<emailaddress>`
+When I save number of elements from `${response}` found by JSON path `$` to scenario variable `numberOfUsers`
+!-- If user returned, set it's ID to the story variable what is used by the scenarios below
+When I set the bearer token
+When the condition `#{eval(${numberOfUsers} == 1)}` is true I do
+|step|
+|!-- user <emailaddress> exists, deleting it|
+|When I save JSON element value from `${response}` by JSON path `$.[0].id` to scenario variable `userIdToDelete`|
+|When I execute HTTP DELETE request for resource with relative URL `${user-endpoint}/${userIdToDelete}`|
+|Then response code is equal to `204`|
+
+Composite: When I set the bearer token
+When I set request headers:
+|name        |value           |
+|Authorization|Bearer ${bearer-token}|
+|Content-Type|application/json|

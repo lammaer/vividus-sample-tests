@@ -114,7 +114,13 @@ When I find > `0` JSON elements from `${response}` by `$.*` and for each element
 |Then JSON element from `${json-context}` by JSON path `$.status` is equal to `active` |
 |Then JSON element from `${json-context}` by JSON path `$.gender` is equal to `male` |
 
-Scenario: GET010 - Number of returned users is maximum 15
+Scenario: GET011 - Number of returned users is maximum 15
 When I execute HTTP GET request for resource with relative URL `${user-endpoint}?page=1&per_page=15`
 Then response code is equal to `200`
 Then number of JSON elements from `${json-context}` by JSON path `$` is less than or equal to 15
+
+Scenario: GET012 - user doesn't exist, lookup by email address
+!-- doublechecking the user doesnt exist
+When I execute HTTP GET request for resource with relative URL `${user-endpoint}/?email=get012@notexist.com`
+Then response code is equal to `200`
+Then JSON element from `${response}` by JSON path `$` is equal to `[]`
