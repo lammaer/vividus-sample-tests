@@ -75,7 +75,7 @@ Then response code is equal to `200`
 Then JSON element from `${response}` by JSON path `$` is equal to `${expected-json}` IGNORING_EXTRA_FIELDS
 
 Scenario: GET005 - Existing user but no bearer token
-!-- make auth header empty, because it is set for every scenario in the story scope on the top 
+!-- make auth header empty, because it is set for every scenario in the story scope on the top
 When I set request headers:
 |name        |value           |
 |Authorization||
@@ -118,4 +118,3 @@ Scenario: GET010 - Number of returned users is maximum 15
 When I execute HTTP GET request for resource with relative URL `${user-endpoint}?page=1&per_page=15`
 Then response code is equal to `200`
 Then number of JSON elements from `${json-context}` by JSON path `$` is less than or equal to 15
-

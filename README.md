@@ -41,7 +41,7 @@ Then JSON element from `${response}` by JSON path `$` is equal to `
 `IGNORING_EXTRA_FIELDS
 ```
 
-Available types: 
+Available types:
 
 ```
 "${json-unit.any-string}"
@@ -58,3 +58,6 @@ Available types:
 git submodule update --remote vividus-build-system
 ```
 
+
+### To raise tickets for the development team
+https://github.com/vividus-framework/vividus/issues
